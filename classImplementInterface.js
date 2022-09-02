@@ -1,27 +1,25 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.Payment = exports.Invoice = void 0;
-var Invoice = /** @class */ (function () {
-    function Invoice(client, work, amount) {
+class Invoice {
+    constructor(client, work, amount) {
         this.client = client;
         this.work = work;
         this.amount = amount;
     }
-    Invoice.prototype.print = function () {
-        return "".concat(this.client, " owes ").concat(this.amount, " dollars for this work: ").concat(this.work);
-    };
-    return Invoice;
-}());
+    print() {
+        return `${this.client} owes ${this.amount} dollars for this work: ${this.work}`;
+    }
+}
 exports.Invoice = Invoice;
-var Payment = /** @class */ (function () {
-    function Payment(recipient, job, amt) {
+class Payment {
+    constructor(recipient, job, amt) {
         this.recipient = recipient;
         this.job = job;
         this.amt = amt;
     }
-    Payment.prototype.print = function () {
-        return "I owe ".concat(this.recipient, " ").concat(this.amt, " dollar(s) for this job: ").concat(this.job);
-    };
-    return Payment;
-}());
+    print() {
+        return `I owe ${this.recipient} ${this.amt} dollar(s) for this job: ${this.job}`;
+    }
+}
 exports.Payment = Payment;
